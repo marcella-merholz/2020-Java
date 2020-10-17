@@ -1,18 +1,23 @@
 package at.dcv.marcella;
 
+import java.util.Arrays;
+
 public class KW42_Day01_TextAnalysis {
 
 /*
 Ein langer String über Hermann Hesse
 _ Anzahl Characters
-_ Anzahl “echte” (ausgesprochen) Characters
+_ Anzahl “echte (alphanumerische = alle Buchstaben, alle Zahlen)” (ausgesprochen) Characters
 _ Anzahl Wörter
 _ Kürzeste / Längste Wort
 _ Anzahl vorkommen von Wort “Hesse”
 _ Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN
  */
 
-    private final static String text = "Zur Zeit des Zweiten Weltkriegs waren seine großen Werke Siddhartha und Der Steppenwolf noch verboten. Heute gehört Hermann Hesse zu den bekanntesten deutschen Schriftstellern. Mehr über den Weltveränderer lest ihr hier\n" +
+    private final static String text = "Dieser TEXT hat 127 Zeichen - ohne Anführungszeichen - und dient nur zur Überprüfung, ob all die Funktionen auch funktionieren.";
+
+            /*
+            "Zur Zeit des Zweiten Weltkriegs waren seine großen Werke Siddhartha und Der Steppenwolf noch verboten. Heute gehört Hermann Hesse zu den bekanntesten deutschen Schriftstellern. Mehr über den Weltveränderer lest ihr hier\n" +
             "Hermann Hesse\n" +
             "\n" +
             "Hermann Hesse erhielt den Nobelpreis für Literatur\n" +
@@ -79,9 +84,102 @@ _ Anzahl Wörter mit ausschließlich klein oder GROßBUCHSTABEN
             "\n" +
             "\"Die Welt zu durchschauen, sie zu verachten, mag großer Denker Sache sein. Mir aber liegt einzig daran, die Welt lieben zu können, sie und mich und alle Wesen mit Liebe und Bewunderung und Ehrfurcht betrachten zu können.\"\n" +
             "Hermann Hesse";
+             */
 
-    public static void hesse() {
-        System.out.println(text.length());
+    private static String normalizeText(String textToNormalize) {
+        textToNormalize = textToNormalize.replaceAll("[^a-zA-ZäÄöÖüÜß]", " "); // Punkt und Fragezeichen müssen im regex immer "escapen"
+        textToNormalize = textToNormalize.replaceAll("[ ]+", " ");
+        return textToNormalize;
     }
 
+    private static int getCounter(char[] chars) {
+
+        String umlaute = "ÄäÖöÜüß";
+        var test = umlaute.toCharArray();
+
+        int alphanNumCounter = 0;
+        for (int i = 0; i < chars.length; i++) {
+            if ((chars[i] >= 49 && chars[i] <= 57)
+                    || (chars[i] >= 65 && chars[i] <= 90)
+                    || (chars[i] >= 97 && chars[i] <= 122)
+                    || chars[i] == 'Ä'
+                    || chars[i] == 'ä'
+                    || chars[i] == 'Ö'
+                    || chars[i] == 'ö'
+                    || chars[i] == 'Ü'
+                    || chars[i] == 'ü'
+                    || chars[i] == 'ß') { // hier lieber für bessere Lesbarkeit in eine funktion auslagern
+                alphanNumCounter++;
+            }
+        }
+        return alphanNumCounter;
+    }
+
+    public static void hesse() {
+        System.out.println("Der Text enthält " + text.length() + " Zeichen");
+        char[] chars = text.toCharArray();
+
+        int counter = getCounter(chars);
+        System.out.println("Der Text enthält " + counter + " alphanumerische Zeichen");
+
+        String textNorm = normalizeText(text);
+        String[] textNormArray = textNorm.split(" ");
+        int wordCounter = 0;
+        for (String word1 : textNormArray) {
+            if (word1.length() > 1) {
+                wordCounter++;
+            }
+        }
+        System.out.println("Der Text enthält " + wordCounter + " Wörter");
+
+        int shortestWordLength = Integer.MAX_VALUE;
+        int longestWordLength = Integer.MIN_VALUE;
+        String shortestWord = " ";
+        String longestWord = " ";
+        for (String word2 : textNormArray) {
+            if (shortestWordLength > word2.length() && word2.length() > 1) {
+                shortestWordLength = word2.length();
+                shortestWord = word2;
+            }
+            if (longestWordLength < word2.length() && word2.length() > 1) {
+                longestWordLength = word2.length();
+                longestWord = word2;
+            }
+        }
+        System.out.println("Das kürzeste Wort lautet: " + shortestWord);
+        System.out.println("Das längste Wort lautet: " + longestWord);
+
+        int nameCounter = 0;
+        for (String word3 : textNormArray) {
+            if (word3.equalsIgnoreCase("Funktionen")) {
+                nameCounter++;
+            }
+        }
+        System.out.println("Das Wort Funktionen kommt " + nameCounter + "-mal vor");
+
+        String textNorm2 = text.replaceAll("[-()\n\";,:\\.\\?!]", " ");
+        String[] textNorm2Array = textNorm2.split(" ");
+        int upperCaseCounter = 0;
+        int lowerCaseCounter = 0;
+        for (String word4 : textNorm2Array) {
+            if (word4.matches("[A-Z]+")) {
+                System.out.println(word4);
+                upperCaseCounter++;
+            }
+            if (word4.matches("[a-z]+")) {
+                System.out.println(word4);
+                lowerCaseCounter++;
+            }
+        }
+        System.out.println("Anzahl der Wörter in GROßBUCHSTABEN: " + upperCaseCounter);
+        System.out.println("Anzahl der Wörter in kleinbuchstaben: " + lowerCaseCounter);
+
+        String testSpaces = "Ein Satz mit    Leerzeichen.";
+        System.out.println(testSpaces);
+        String[] testSpacesArray = testSpaces.split(" ");
+        System.out.println(testSpacesArray);
+        for (String oneWord : testSpacesArray) {
+            System.out.println(oneWord);
+        }
+    }
 }
