@@ -49,6 +49,14 @@ public class Main {
         // KW42_Day01.StringHand();
         // KW42_Day01.splitWord("imWinter");
         // KW42_Day01_TextAnalysis.hesse();
-        KW42_Day02_TextAnalysis.hesse(KW42_Day02_TextAnalysis.textKurz);
+        // KW42_Day02_TextAnalysis.hesse(KW42_Day02_TextAnalysis.textKurz);
+
+        // KW43_Day01.currencyCalcResult();
+        // KW43_Day01.sumRandom();
+        // KW43_Day02.zufall();
+        // KW43_Day02.runden();
+        // KW43_Day02.wanderingX();
+        KW43_Day03.bankomat();
+
     }
 }
