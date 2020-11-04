@@ -66,8 +66,7 @@ public class KW38_Day03 {
     }
 
     // Prüfen, ob es sich bei dem Wort um ein Palindrom handelt
-    public static void palindrom1() {
-        String name = "otto";
+    public static void palindrom1(String name) {
         boolean isPalindrom = true;
 
         for (int i = 0; i < name.length() / 2; i++) {
