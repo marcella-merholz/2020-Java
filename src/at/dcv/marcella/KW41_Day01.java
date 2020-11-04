@@ -53,7 +53,7 @@ public class KW41_Day01 {
     }
 
     public static long pascalCacheCalc(int row, int column, long[][] cache) {
-        // Cache Hit
+        // Cache Hit, merkt sich die bereits errechneten Positionen
         if (cache[row - 1][column - 1] != 0) {
             return cache[row - 1][column - 1];
         }
