@@ -4,63 +4,52 @@ public class KW41_Day02_String {
 
     public static void string() {
 
-        String helloWorld = "Hello World! ";
+        String helloWorld = "Hello World!";
 
-        System.out.println("\"" + helloWorld + "\".charAt(1) returns " + helloWorld.charAt(0));
+        System.out.println("String helloWorld: \"" + helloWorld + "\"");
+        System.out.println("\"helloWorld.charAt(0)\" returns " + helloWorld.charAt(0));
         System.out.println();
-
-        System.out.println("\".compareTo(Apfelsaft)\" returns " + helloWorld.compareTo("Apfelsaft"));
-        System.out.println("\".compareTo(Orangensaft)\" returns " + helloWorld.compareTo("Orangensaft"));
-        System.out.println("\".compareTo(Hello World!)\" returns " + helloWorld.compareTo("Hello World!"));
+        System.out.println("\"helloWorld.compareTo(\"Apfelsaft\")\" returns " + helloWorld.compareTo("Apfelsaft"));
+        System.out.println("\"helloWorld.compareTo(\"Orangensaft\")\" returns " + helloWorld.compareTo("Orangensaft"));
+        System.out.println("\"helloWorld.compareTo(\"Hello World!\")\" returns " + helloWorld.compareTo("Hello World!"));
         System.out.println();
-
-        System.out.println("\".compareTo(HELLO WORLD!)\" returns " + helloWorld.compareTo("HELLO WORLD"));
-        System.out.println("\".compareToIgnoreCase(HELLO WORLD!)\" returns " + helloWorld.compareToIgnoreCase("HELLO WORLD"));
+        System.out.println("\"helloWorld.compareTo(\"HELLO WORLD!\")\" returns " + helloWorld.compareTo("HELLO WORLD!"));
+        System.out.println("\"helloWorld.compareToIgnoreCase(\"HELLO WORLD!\")\" returns " + helloWorld.compareToIgnoreCase("HELLO WORLD!"));
         System.out.println();
-
-        System.out.println("\".equals(Apfelsaft)\" returns " + helloWorld.equals("Apfelsaft"));
-        System.out.println("\".equals(Orangensaft)\" returns " + helloWorld.equals("Orangensaft"));
-        System.out.println("\".equals(Hello World! )\" returns " + helloWorld.equals("Hello World! "));
+        System.out.println("\"helloWorld.equals(\"Apfelsaft\")\" returns " + helloWorld.equals("Apfelsaft"));
+        System.out.println("\"helloWorld.equals(\"Orangensaft\")\" returns " + helloWorld.equals("Orangensaft"));
+        System.out.println("\"helloWorld.equals(\"Hello World!\")\" returns " + helloWorld.equals("Hello World!"));
         System.out.println();
-
-        System.out.println("\"" + helloWorld + "\".concat(" + helloWorld + ")\" returns " + helloWorld.concat(helloWorld));
+        System.out.println("\"helloWorld.concat(helloWorld)\" returns " + helloWorld.concat(helloWorld));
         System.out.println();
-
-        System.out.println("\"" + helloWorld + "\".contains(Apfelsaft)\" returns " + helloWorld.contains("Apfelsaft"));
-        System.out.println("\"" + helloWorld + "\".contains(Worl)\" returns " + helloWorld.contains("Worl"));
+        System.out.println("\"helloWorld.contains(\"Apfelsaft\")\" returns " + helloWorld.contains("Apfelsaft"));
+        System.out.println("\"helloWorld.contains(\"Worl\")\" returns " + helloWorld.contains("Worl"));
         System.out.println();
-
-        System.out.println("\"" + helloWorld + ".startsWith(Hell)\" returns " + helloWorld.startsWith("Hell"));
-        System.out.println("\"" + helloWorld + ".endsWith(ld)\" returns " + helloWorld.endsWith("ld"));
+        System.out.println("\"helloWorld.startsWith(\"Hell\")\" returns " + helloWorld.startsWith("Hell"));
+        System.out.println("\"helloWorld.endsWith(\"ld\")\" returns " + helloWorld.endsWith("ld"));
         System.out.println();
-
         System.out.printf("%5d%n", 100); // ordnet auf Dezimalstellen
         System.out.printf("%05d%n", 100);
-
+        System.out.println();
         String myFormatedString = String.format("%05d%n", 100); // String.format bezieht sich nicht auf konkreten String (wie Beispiel "hello World"), sondern auf String-Klasse
         System.out.print(myFormatedString);
         System.out.println();
-
-        System.out.println("\"" + helloWorld + ".indexOf(e)\" returns " + helloWorld.indexOf("e"));
-        System.out.println("\"" + helloWorld + ".indexOf(o)\" returns " + helloWorld.indexOf("o")); // indexOf gibt immer nur den ersten Treffer aus
-        System.out.println("\"" + helloWorld + ".indexOf(o, 6)\" returns " + helloWorld.indexOf("o", 6)); // fängst ab Position 6 an wieder zu suchen
+        System.out.println("\"helloWorld.indexOf(\"e\")\" returns " + helloWorld.indexOf("e"));
+        System.out.println("\"helloWorld.indexOf(\"o\")\" returns " + helloWorld.indexOf("o")); // indexOf gibt immer nur den ersten Treffer aus
+        System.out.println("\"helloWorld.indexOf(\"o\", 6)\" returns " + helloWorld.indexOf("o", 6)); // fängst ab Position 6 an wieder zu suchen
         System.out.println();
-
-        System.out.println("\"" + helloWorld + ".lastIndexOf(o)\" returns " + helloWorld.lastIndexOf("o"));
+        System.out.println("\"helloWorld.lastIndexOf(\"o\")\" returns " + helloWorld.lastIndexOf("o"));
         System.out.println();
-
         String blanks = "             ";
+        System.out.println("String blanks: \"" + blanks + "\"");
         System.out.println("\"" + blanks + "\" isBlank() " + blanks.isBlank());
         System.out.println("\"" + blanks + "\" isEmpty() " + blanks.isEmpty());
         System.out.println("\"\" isEmpty() " + "".isEmpty());
         System.out.println();
-
-        System.out.println("\"" + helloWorld + ".length()\" returns " + helloWorld.length());
+        System.out.println("\"helloWorld.length()\" returns " + helloWorld.length());
         System.out.println();
-
-        System.out.println("\"" + helloWorld + ".repeat(3)\" returns " + helloWorld.repeat(3));
+        System.out.println("\"helloWorld.repeat(3)\" returns " + helloWorld.repeat(3));
         System.out.println();
-
         System.out.println(helloWorld.replaceAll("World", "Gyula"));
         System.out.println(helloWorld.replaceAll(" World", ""));
         String textForReplace = "irgend ein   Text";
@@ -97,22 +86,19 @@ public class KW41_Day02_String {
         // regex test websiten; zB regex101.com
         System.out.println();
         String whiteSpaces = " Apf elsaft   ";
-        System.out.println("\"" + whiteSpaces + ".strip()\" returns #" + whiteSpaces.strip() + "#");
-        System.out.println("\"" + whiteSpaces + ".stripLeading()\" returns #" + whiteSpaces.stripLeading() + "#");
-        System.out.println("\"" + whiteSpaces + ".stripTrailing()\" returns #" + whiteSpaces.stripTrailing() + "#");
-        System.out.println("\"" + whiteSpaces + ".trim()\" returns #" + whiteSpaces.trim() + "#");
+        System.out.println("String whiteSpaces: " + whiteSpaces);
+        System.out.println("\"whiteSpaces.strip()\" returns #" + whiteSpaces.strip() + "#");
+        System.out.println("\"whiteSpaces.stripLeading()\" returns #" + whiteSpaces.stripLeading() + "#");
+        System.out.println("\"whiteSpaces.stripTrailing()\" returns #" + whiteSpaces.stripTrailing() + "#");
+        System.out.println("\"whiteSpaces.trim()\" returns #" + whiteSpaces.trim() + "#");
         System.out.println();
-        System.out.println("\"" + helloWorld + ".substring(4)\" returns " + helloWorld.substring(4));
-        System.out.println("\"" + helloWorld + ".substring(4, 7)\" returns " + helloWorld.substring(4, 7));
-
-
+        System.out.println("\"helloWorld.substring(4)\" returns " + helloWorld.substring(4));
+        System.out.println("\"helloWorld.substring(4, 7)\" returns " + helloWorld.substring(4, 7));
         System.out.println();
         String[] words = helloWorld.split(" ");
         System.out.println("Split auf Words: ");
         for (String oneWord : words) {
             System.out.println(oneWord);
         }
-
-
     }
 }
