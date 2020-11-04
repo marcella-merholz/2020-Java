@@ -8,7 +8,7 @@ public class KW38_Day01 {
         float nochEinFloat = 02.0F;
         System.out.println(buchstabe);
         System.out.println(nochEinFloat);
-        System.out.println(buchstabe + nochEinFloat); // !!! hier wird char in float? verwandelt (ASCII-Code Belegung: 77)
+        System.out.println(buchstabe + nochEinFloat); // ! hier wird char in float? verwandelt (ASCII-Code Belegung: 77)
     }
 
     public static void sortInstruction () {
