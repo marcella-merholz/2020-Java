@@ -17,8 +17,7 @@ public class KW39_Day01 {
         }
         System.out.println("\n");
 
-// do-while-schleife beispiel
-
+        // do-while-schleife beispiel
         int i = 0;
         do {
             i++;
@@ -50,11 +49,9 @@ public class KW39_Day01 {
     public static void palindrom() {
         boolean isPalindrom = true;
         String WordToCheck = "marcella";
-
         for (int i = 0; i < WordToCheck.length() / 2; i++) {
             char charToCheck1 = WordToCheck.charAt(i);
             char charToCheck2 = WordToCheck.charAt(WordToCheck.length() - 1 - i);
-
             if (charToCheck1 != charToCheck2) {
                 isPalindrom = false;
                 break;
@@ -67,25 +64,8 @@ public class KW39_Day01 {
         }
     }
 
+    // Sternaufgabe
     public static void stars() {
-
-        /* Sternaufgabe funktioniert nicht
-            String stern = "*";
-            for (int i = 1; i <= 9; i++) {
-                if (i <= 5) {
-                    for (int j = 1; j <= i; j++) {
-                        System.out.print(stern);
-                    }
-                } else {
-                    for (int j = 1; j <= 9-i; j--) {
-                        System.out.print(stern);
-                    }
-                    System.out.println();
-                }
-            }
-        */
-
-// Sternaufgabe funktioniert
         String stern = "*";
         for (int i = 1; i <= 5; i++) {
             for (int j = 1; j <= i; j++) {
@@ -100,4 +80,5 @@ public class KW39_Day01 {
             System.out.println();
         }
     }
+
 }
