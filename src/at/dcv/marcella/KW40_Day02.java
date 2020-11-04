@@ -11,7 +11,7 @@ public class KW40_Day02 {
         int compCounter = 0;
 
         for (int i = 0; i < numbers.length; ++i) {
-            for (int j = 0; j < numbers.length - 1 - i; ++j) {
+            for (int j = 0; j < numbers.length - 1 - i; ++j) { // -i verkürzt hier den Zugriff, da die letzten Zahlen bereits sortiert sind
                 compCounter++;
                 if (numbers[j] < numbers[j + 1]) {
                     int temp = numbers[j];
