@@ -34,7 +34,4 @@ public class KW41_Day02 {
         return result;
     }
 
-
-
-
 }
