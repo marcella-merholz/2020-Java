@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class KW40_Day03 {
 
+    // refactor über intelliJ: Block markieren, rechte Maustaste, Refactor, Extract Method, oder über rote Lampe bei der Zeilenangabe. macht private weil Grundregel in java: immer niedrigste Sichtbarkeit
     public static void refactoring() {
 
         String[] animals = new String[]{"Maus", "Hase", "Igel", "Elefant"};
@@ -20,17 +21,15 @@ public class KW40_Day03 {
 
     }
 
-    // refactoring manuell
+    // java doc, der grüne Kommentar, eingeben mit: /*** + Enter, dieser Kommentar wird dann angezeigt, wenn man mit der Maus über den Namen (in diesem Fall "bubblesort") fährt
     /***
      * Makes a copy of the original array and returns the sorted copy
      * @param arrayToSort array to sort
      * @return sorted copy of the array
      */
-    // java doc, der grüne Kommentar, eingeben mit: /*** + Enter, dieser Kommentar wird dann angezeigt, wenn man mit der Maus über den Namen (in diesem Fall "bubblesort") fährt
     // kann man auch in andere Klasse importieren über: Functions.bubblesort(names)
-
     public static String[] bubblesort(String[] arrayToSort) {
-        String[] arrayCopy = Arrays.copyOf(arrayToSort, arrayToSort.length);
+        String[] arrayCopy = Arrays.copyOf(arrayToSort, arrayToSort.length); // makes a copy of original StringArray
         boolean swapped = true; // damit überhaupt in Schleife geht
         while (swapped) {
             swapped = false; // initial auf false setzen, damit nachher überprüft werden kann, ob ausgetauscht wird
@@ -49,8 +48,6 @@ public class KW40_Day03 {
     }
 
     private static int getLongestElementIndex(String[] longestOfNames) {
-        // refactor über intelliJ: Block markieren, rechte Maustaste, Refactor, Extract Method. macht private weil Grundregel in java: immer niedrigste Sichtbarkeit
-
         int longestElementIndex = 0;
         int longestElementLength = 0;
         for (int i = 0; i < longestOfNames.length; ++i) {
