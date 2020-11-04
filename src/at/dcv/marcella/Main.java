@@ -8,8 +8,8 @@ public class Main {
         // KW38_Day01.sortInstruction();
 
         // KW38_Day02.bool();
-        // KW38_Day02.pi();
         // KW38_Day02.loops();
+        // KW38_Day02.pi();
         // KW38_Day02.sum();
         // KW38_Day02.multiplyFor();
         // KW38_Day02.rowColumnOutput();
@@ -19,12 +19,15 @@ public class Main {
         // KW38_Day03.prime1();
         // KW38_Day03.arrays();
         // KW38_Day03.charAt();
-        // KW38_Day03.palindrom1();
+        // KW38_Day03.palindrom1("otto");
 
         // KW39_Day01.multiply();
         // KW39_Day01.prime();
         // KW39_Day01.palindrom();
         // KW39_Day01.stars();
+
+        // KW39_Day02.bingo();
+        // KW39_Day02.businessResult();
 
         // KW40_Day01.businessResultForEach();
         // KW40_Day01.leapyear();
@@ -56,7 +59,12 @@ public class Main {
         // KW43_Day02.zufall();
         // KW43_Day02.runden();
         // KW43_Day02.wanderingX();
-        KW43_Day03.bankomat();
+        // KW43_Day03.bankomat();
+
+        // KW44_Day01.luckyGame();
+
+        // KW45_Day01.multiArray();
+        // KW45_Day01.ticTacToe();
 
     }
 }
