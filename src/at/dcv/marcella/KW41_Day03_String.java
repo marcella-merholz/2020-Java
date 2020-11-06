@@ -30,13 +30,12 @@ public class KW41_Day03_String {
 
         // Aufgabe: wie oft kommt das Satzzeichen "." vor?
         int punktAnzahl = 0;
-        char sign = '.';
         for (int i = 0; i < meinSatz.length(); ++i) {
-            if (meinSatz.charAt(i) == sign) {
+            if (meinSatz.charAt(i) == '.') {
                 punktAnzahl++;
             }
         }
-        System.out.println("Anzahl \".\" " + punktAnzahl);
+        System.out.println("Anzahl \".\": " + punktAnzahl);
 
         // Aufgabe: wie oft kommt das Wort "Hand" im folgenden Satz vor?
         String satzHand = "Das ist eine Hand. Mit der Hand kann ich winken. Freundlichen Menschen gebe ich die Hand. Im Winter trage ich Handschuhe. Gibst du mir deine Hand?";
