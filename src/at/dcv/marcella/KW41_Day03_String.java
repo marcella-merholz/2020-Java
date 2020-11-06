@@ -6,16 +6,19 @@ public class KW41_Day03_String {
 
         System.out.println("Hello".charAt(1));
         System.out.println("Hello".substring(3)); // erzeuge neues Objekt vom Typ String, ab Index 3
-        System.out.println("Hello".substring(1, 4)); // von Index 1 bis Index 4
+        System.out.println("Hello".substring(1, 4)); // von Index 1 bis Index 3
         System.out.println("Hello".contains("ll"));
         System.out.println((int) 'l');
         System.out.println((int) 'L'); // Groß- / Kleinschreibung beachten
-        System.out.println("Das ist ein Satz".split(" "));
 
-        String meinSatz = "Das ist ein Satz. Einmal mehr sage ich eines zu euch: Ein Mensch hat Hände.";
+        String[] words = "Das ist ein Satz".split(" ");
+        for (String oneWord : words) {
+            System.out.println(oneWord);
+        }
 
-        // wie oft kommt das Wort "ein" im folgenden Satz vor?
+        // Aufgabe: wie oft kommt das Wort "ein" im folgenden Satz vor?
         // Algorithmus: zerlege die Zeichnfolge (String) in einzelne Worte (split, Array), vergleiche, zähle
+        String meinSatz = "Das ist ein Satz. Einmal mehr sage ich eines zu euch: Ein Mensch hat Hände.";
         int wortAnzahl = 0;
         String[] worte = meinSatz.split(" ");
         for (int i = 0; i < worte.length; ++i) {
@@ -35,7 +38,7 @@ public class KW41_Day03_String {
         }
         System.out.println("Anzahl \".\" " + punktAnzahl);
 
-        // Aufgabe: wie oft kommt das Wort "Hand" vor?
+        // Aufgabe: wie oft kommt das Wort "Hand" im folgenden Satz vor?
         String satzHand = "Das ist eine Hand. Mit der Hand kann ich winken. Freundlichen Menschen gebe ich die Hand. Im Winter trage ich Handschuhe. Gibst du mir deine Hand?";
         int handAnzahl = 0;
         String[] worte2 = satzHand.split(" ");
@@ -47,10 +50,8 @@ public class KW41_Day03_String {
         }
         System.out.println("Anzahl Wort \"Hand\": " + handAnzahl);
 
-        // Zeichenfolge: ImWinter;trage_ich Handschuhe.
-        // Aufgabe: Wie viele Worte enthält die Zeichenfolge?
+        // Aufgabe: Wie viele Worte enthält die folgende Zeichenfolge?
         // Algorithmus: Satz strukturieren (Leerzeichen einfügen, falsche Zeichen ersetzen), Worte ermitteln, Worte zählen
-
         String myString = "ImWinter;trage_ich Handschuhe.";
         myString = myString.replaceAll("[;_]", " ");
         for (int i = 1; i < myString.length(); ++i) {
@@ -64,7 +65,5 @@ public class KW41_Day03_String {
         for (String oneWord : myStringArray) {
         }
         System.out.println("Der Satz hat " + (myStringArray.length +1) + " Wörter");
-
     }
-
 }
