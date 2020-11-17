@@ -7,12 +7,12 @@ import java.util.Scanner;
 public class KW43_Day02 {
 
     public static void runden() {
-        float[] values = {1.0f, 1.15f, 1.5f, 1.91f, 11f, 19f, 120f, };
+        float[] values = {1.0f, 1.15f, 1.5f, 1.91f, 11f, 19f, 120f};
 
         for (float f: values) {
-            System.out.print(f + " ");
-            System.out.print(Math.round(f) + " "); // Nach .5 Regel
-            System.out.print(Math.floor(f) + " "); // abrunden
+            System.out.print(f + " | ");
+            System.out.print(Math.round(f) + " | "); // Nach .5 Regel
+            System.out.print(Math.floor(f) + " | "); // abrunden
             System.out.print(Math.ceil(f)); // aufrunden
             System.out.println();
         }
@@ -20,9 +20,9 @@ public class KW43_Day02 {
 
         float faktor = 10.0f;
         for (float f: values) {
-            System.out.print(f + " ");
-            System.out.print(faktor*Math.round(f/faktor) + " "); // Nach .5 Regel
-            System.out.print(faktor*Math.floor(f/faktor) + " "); // abrunden
+            System.out.print(f + " | ");
+            System.out.print(faktor*Math.round(f/faktor) + " | "); // Nach .5 Regel
+            System.out.print(faktor*Math.floor(f/faktor) + " | "); // abrunden
             System.out.print(faktor*Math.ceil(f/faktor)); // aufrunden
             System.out.println();
         }

@@ -63,7 +63,7 @@ public class KW43_Day03 {
         return accountBalance;
     }
 
-private static void salutation(){
+    private static void salutation() {
         System.out.println("Auf Wiedersehen");
-        }
-        }
+    }
+}

@@ -43,28 +43,47 @@ public class Main {
         // KW41_Day01.pascalCache();
 
         // KW41_Day02.faktorial();
-        // KW41_Day02.faktWithoutRecursion(20);
+        // KW41_Day02.faktWithoutRecursion(5);
         // KW41_Day02.fakt2(5);
         // KW41_Day02_String.string();
         // KW41_Day03_String.string();
+        // KW41_Day03_String.substringFunction("What up my glip glops", 1, 6);
 
-        // KW42_Day01.String();
-        // KW42_Day01.StringHand();
-        // KW42_Day01.splitWord("imWinter");
+
+        // KW42_Day01_String.string();
+        // KW42_Day01_String.stringHand();
+        // KW42_Day01_String.cleanSentence();
+        // KW42_Day01_String.splitWord("imWinter");
         // KW42_Day01_TextAnalysis.hesse();
         // KW42_Day02_TextAnalysis.hesse(KW42_Day02_TextAnalysis.textKurz);
 
         // KW43_Day01.currencyCalcResult();
         // KW43_Day01.sumRandom();
-        // KW43_Day02.zufall();
         // KW43_Day02.runden();
+        // KW43_Day02.zufall();
         // KW43_Day02.wanderingX();
         // KW43_Day03.bankomat();
 
-        // KW44_Day01.luckyGame();
+        // KW44_Day01_Holiday_RandomNumber.luckyGame();
+        // KW44_Day01_Holiday_Wichteln.wichteln();
 
-        // KW45_Day01.multiArray();
-        // KW45_Day01.ticTacToe();
+        // KW45_Day01_TwoDArray.multiArray();
+        // KW45_Day01_TwoDArray.ticTacToe();
+        // KW45_Day02_Encryption.jointSolutionEncryption();
+        // KW45_Day02_TwoDArray.graph();
+        // KW45_Day03_WichtelnMitGyula.secretSanta();
 
+        // KW46_Day01_Hourlist_Marcella.hourList();
+        // KW46_Day01_Hourlist_Daniel.hourlist();
+        // KW46_Day02_Hourlist_New.hourList();
+        // KW46_Day03_Hourlist_New.hourList();
+        // SimpleCSVReader.readCSV();
+
+        KW47_Day01_BudgetFK19.budgetFK19();
+
+        // CheatSheat.substringTest();
+        // CheatSheat.testFunction();
+        // CheatSheat.twoDimArray();
+        // CheatSheat.fillTwoDimArray();
     }
 }

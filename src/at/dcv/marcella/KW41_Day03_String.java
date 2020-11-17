@@ -48,21 +48,17 @@ public class KW41_Day03_String {
             }
         }
         System.out.println("Anzahl Wort \"Hand\": " + handAnzahl);
-
-        // Aufgabe: Wie viele Worte enthält die folgende Zeichenfolge?
-        // Algorithmus: Satz strukturieren (Leerzeichen einfügen, falsche Zeichen ersetzen), Worte ermitteln, Worte zählen
-        String myString = "ImWinter;trage_ich Handschuhe.";
-        myString = myString.replaceAll("[;_]", " ");
-        for (int i = 1; i < myString.length(); ++i) {
-            int upperCase = myString.charAt(i);
-            int lowerCase = myString.charAt(i -1);
-            if ((upperCase > 65 && upperCase < 90) && (lowerCase > 97 && upperCase < 122)) {
-                System.out.println(i);
-            }
-        }
-        String[] myStringArray = myString.split(" ");
-        for (String oneWord : myStringArray) {
-        }
-        System.out.println("Der Satz hat " + (myStringArray.length +1) + " Wörter");
     }
+
+    // Von Lucas: Write a function, which mirrors the functionality of substring(int start, int end)
+    public static void substringFunction(String string, int start, int end) {
+        System.out.println("String: " + string);
+        System.out.println("Start: " + start);
+        System.out.println("End: " + end);
+
+        for (int i = start; i < end; i++) {
+            System.out.print(string.charAt(i));
+        }
+    }
+
 }
