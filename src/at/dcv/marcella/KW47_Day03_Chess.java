@@ -1,6 +1,5 @@
 package at.dcv.marcella;
 
-import java.util.Arrays;
 import java.util.Random;
 
 public class KW47_Day03_Chess {
@@ -17,7 +16,7 @@ public class KW47_Day03_Chess {
             movePosition(sizeChessboard, position);
             printField(sizeChessboard, position);
             try {
-                Thread.sleep(1500);
+                Thread.sleep(900);
             } catch (InterruptedException ie) {/*ignore*/}
         }
 
@@ -25,7 +24,7 @@ public class KW47_Day03_Chess {
     }
 
     private static void printField(int size, int[] position) {
-        char knight = 9822;;
+        char knight = 9822;
         char white = 9646;
 
         System.out.println("  A B C D E F G H");
@@ -34,7 +33,7 @@ public class KW47_Day03_Chess {
             for (int j = 0; j < size; j++) {
                 if (i == position[0] && j == position[1]) {
                     System.out.print(knight);
-                } else if ((i % 2) == (j % 2)){
+                } else if ((i % 2) == (j % 2)) {
                     System.out.print(white);
                 } else {
                     System.out.print("  ");
@@ -48,44 +47,43 @@ public class KW47_Day03_Chess {
     private static void movePosition(int size, int[] position) {
         int[] originalPosition = {position[0], position[1]};
         boolean stepOK = false;
-        while (!stepOK){
-            int moveCase = random.nextInt(8);
+        while (!stepOK) {
+            int moveCase = random.nextInt(9);
             switch (moveCase) {
-                case 1:
+                case 1 -> {
                     position[0] += 2;
                     position[1] += 1;
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     position[0] += 1;
                     position[1] += 2;
-                    break;
-                case 3:
+                }
+                case 3 -> {
                     position[0] -= 2;
                     position[1] += 1;
-                    break;
-                case 4:
+                }
+                case 4 -> {
                     position[0] -= 1;
                     position[1] += 2;
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     position[0] += 2;
                     position[1] -= 1;
-                    break;
-                case 6:
+                }
+                case 6 -> {
                     position[0] += 1;
                     position[1] -= 2;
-                    break;
-                case 7:
+                }
+                case 7 -> {
                     position[0] -= 2;
                     position[1] -= 1;
-                    break;
-                case 8:
-                    position[0] -= 2;
-                    position[1] -= 1;
-                    break;
+                }
+                case 8 -> {
+                    position[0] -= 1;
+                    position[1] -= 2;
+                }
             }
-            if (position[0] >= 0 && position[0] < size && position[1] >= 0 && position[1] < size)
-            {
+            if (position[0] >= 0 && position[0] < size && position[1] >= 0 && position[1] < size) {
                 stepOK = true;
             } else {
                 position[0] = originalPosition[0];
