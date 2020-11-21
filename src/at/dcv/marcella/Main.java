@@ -79,7 +79,8 @@ public class Main {
         // KW46_Day03_Hourlist_New.hourList();
         // SimpleCSVReader.readCSV();
 
-        KW47_Day01_BudgetFK19.budgetFK19();
+        // KW47_Day01_BudgetFK19.budgetFK19();
+        KW47_Day03_Chess.chess();
 
         // CheatSheat.substringTest();
         // CheatSheat.testFunction();
