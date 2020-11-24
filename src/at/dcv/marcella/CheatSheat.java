@@ -104,6 +104,15 @@ public class CheatSheat {
         }
     }
 
+    public static void format() {
+    System.out.printf("|%15s|%10.2f|%5s| %n", "hey", 0.3, "a");
+        System.out.printf("|%15s|%10.2f|%5s| %n", "ho", 1.2, "ab");
+        System.out.printf("|%15s|%10.2f|%5s| %n", "test", 1396743.45, "abc");
+        System.out.printf("|%15s|%10.2f|%5s| %n", "format", 45536.243, "abcd");
+        System.out.printf("|%15s|%10.2f|%5s| %n", "output", 0.0, "abcde");
+        System.out.printf("|%15s|%10.2f|%5s| %n", "right",45.7, "abc");
+    }
+
 
     /*
             cond ? toDo1 : toDo2;   // Verkürzte Schreibweise: ?

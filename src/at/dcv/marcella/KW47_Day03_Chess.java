@@ -24,17 +24,16 @@ public class KW47_Day03_Chess {
     }
 
     private static void printField(int size, int[] position) {
-        char knight = 9822;
-        char white = 9646;
+        char blackKnight = 9822;
 
-        System.out.println("  A B C D E F G H");
+        System.out.println("   A B C D E F G H");
         for (int i = 0; i < size; i++) {
             System.out.print(8 - i + " ");
             for (int j = 0; j < size; j++) {
                 if (i == position[0] && j == position[1]) {
-                    System.out.print(knight);
+                    System.out.print(blackKnight);
                 } else if ((i % 2) == (j % 2)) {
-                    System.out.print(white);
+                    System.out.print(" X");
                 } else {
                     System.out.print("  ");
                 }
