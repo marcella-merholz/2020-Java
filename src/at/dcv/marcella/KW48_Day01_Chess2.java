@@ -54,49 +54,48 @@ private static void printField(int size, int[] positionBlack, int[] positionWhit
     }
 
     private static void movePosition(int size, int[] position) {
-        int[] originalPosition = {position[0], position[1]};
+        int[] copyPosition = {position[0], position[1]};
         boolean stepOK = false;
         while (!stepOK) {
             int moveCase = random.nextInt(9);
             switch (moveCase) {
                 case 1 -> {
-                    position[0] += 2;
-                    position[1] += 1;
+                    copyPosition[0] += 2;
+                    copyPosition[1] += 1;
                 }
                 case 2 -> {
-                    position[0] += 1;
-                    position[1] += 2;
+                    copyPosition[0] += 1;
+                    copyPosition[1] += 2;
                 }
                 case 3 -> {
-                    position[0] -= 2;
-                    position[1] += 1;
+                    copyPosition[0] -= 2;
+                    copyPosition[1] += 1;
                 }
                 case 4 -> {
-                    position[0] -= 1;
-                    position[1] += 2;
+                    copyPosition[0] -= 1;
+                    copyPosition[1] += 2;
                 }
                 case 5 -> {
-                    position[0] += 2;
-                    position[1] -= 1;
+                    copyPosition[0] += 2;
+                    copyPosition[1] -= 1;
                 }
                 case 6 -> {
-                    position[0] += 1;
-                    position[1] -= 2;
+                    copyPosition[0] += 1;
+                    copyPosition[1] -= 2;
                 }
                 case 7 -> {
-                    position[0] -= 2;
-                    position[1] -= 1;
+                    copyPosition[0] -= 2;
+                    copyPosition[1] -= 1;
                 }
                 case 8 -> {
-                    position[0] -= 1;
-                    position[1] -= 2;
+                    copyPosition[0] -= 1;
+                    copyPosition[1] -= 2;
                 }
             }
-            if (position[0] >= 0 && position[0] < size && position[1] >= 0 && position[1] < size) {
+            if (copyPosition[0] >= 0 && copyPosition[0] < size && copyPosition[1] >= 0 && copyPosition[1] < size) {
+                position[0] = copyPosition[0];
+                position[1] = copyPosition[1];
                 stepOK = true;
-            } else {
-                position[0] = originalPosition[0];
-                position[1] = originalPosition[1];
             }
         }
     }
