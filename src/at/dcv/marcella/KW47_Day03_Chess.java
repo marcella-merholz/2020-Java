@@ -1,5 +1,6 @@
 package at.dcv.marcella;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class KW47_Day03_Chess {
@@ -16,7 +17,7 @@ public class KW47_Day03_Chess {
             movePosition(sizeChessboard, position);
             printField(sizeChessboard, position);
             try {
-                Thread.sleep(900);
+                Thread.sleep(800);
             } catch (InterruptedException ie) {/*ignore*/}
         }
 
@@ -92,6 +93,8 @@ public class KW47_Day03_Chess {
     }
 
     public static boolean checkPosition(int[] position) {
+        System.out.println(Arrays.toString(position));
+        System.out.println();
         for (int i = 0; i < position.length; i++) {
             if (position[0] == 0 && position[1] == 7) {
                 return true;

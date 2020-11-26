@@ -80,9 +80,9 @@ public class Main {
         // SimpleCSVReader.readCSV();
 
         // KW47_Day01_BudgetFK19.budgetFK19();
-        // KW47_Day03_Chess.chess();
+        KW47_Day03_Chess.chess();
 
-        KW48_Day01_Chess2.chess();
+        // KW48_Day01_Chess2.chess();
 
 
 
