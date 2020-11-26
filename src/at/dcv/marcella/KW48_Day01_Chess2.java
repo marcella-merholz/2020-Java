@@ -1,5 +1,6 @@
 package at.dcv.marcella;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class KW48_Day01_Chess2 {
@@ -15,7 +16,7 @@ public class KW48_Day01_Chess2 {
         printField(sizeChessboard, positionBlack, positionWhite);
 
         while (!checkGameOver(positionBlack, positionWhite)) {
-            if (currentPlayer == "black") {
+            if (currentPlayer.equals("black")) {
                 movePosition(sizeChessboard, positionBlack);
             } else {
                 movePosition(sizeChessboard, positionWhite);
@@ -23,14 +24,14 @@ public class KW48_Day01_Chess2 {
             printField(sizeChessboard, positionBlack, positionWhite);
             currentPlayer = togglePlayer(currentPlayer);
             try {
-                Thread.sleep(1);
+                Thread.sleep(1200);
             } catch (InterruptedException ie) {/*ignore*/}
         }
 
         System.out.println(currentPlayer + " hat gewonnen");
     }
 
-private static void printField(int size, int[] positionBlack, int[] positionWhite) {
+    private static void printField(int size, int[] positionBlack, int[] positionWhite) {
         char blackKnight = 9822;
         char whiteKnight = 9816;
 
@@ -57,51 +58,52 @@ private static void printField(int size, int[] positionBlack, int[] positionWhit
         int[] copyPosition = {position[0], position[1]};
         boolean stepOK = false;
         while (!stepOK) {
-            int moveCase = random.nextInt(9);
+            int moveCase = random.nextInt(8);
             switch (moveCase) {
+                case 0 -> {
+                    position[0] += 2;
+                    position[1] += 1;
+                }
                 case 1 -> {
-                    copyPosition[0] += 2;
-                    copyPosition[1] += 1;
+                    position[0] += 1;
+                    position[1] += 2;
                 }
                 case 2 -> {
-                    copyPosition[0] += 1;
-                    copyPosition[1] += 2;
+                    position[0] -= 2;
+                    position[1] += 1;
                 }
                 case 3 -> {
-                    copyPosition[0] -= 2;
-                    copyPosition[1] += 1;
+                    position[0] -= 1;
+                    position[1] += 2;
                 }
                 case 4 -> {
-                    copyPosition[0] -= 1;
-                    copyPosition[1] += 2;
+                    position[0] += 2;
+                    position[1] -= 1;
                 }
                 case 5 -> {
-                    copyPosition[0] += 2;
-                    copyPosition[1] -= 1;
+                    position[0] += 1;
+                    position[1] -= 2;
                 }
                 case 6 -> {
-                    copyPosition[0] += 1;
-                    copyPosition[1] -= 2;
+                    position[0] -= 2;
+                    position[1] -= 1;
                 }
                 case 7 -> {
-                    copyPosition[0] -= 2;
-                    copyPosition[1] -= 1;
-                }
-                case 8 -> {
-                    copyPosition[0] -= 1;
-                    copyPosition[1] -= 2;
+                    position[0] -= 1;
+                    position[1] -= 2;
                 }
             }
-            if (copyPosition[0] >= 0 && copyPosition[0] < size && copyPosition[1] >= 0 && copyPosition[1] < size) {
+            if (position[0] >= 0 && position[0] < size && position[1] >= 0 && position[1] < size) {
+                stepOK = true;
+            } else {
                 position[0] = copyPosition[0];
                 position[1] = copyPosition[1];
-                stepOK = true;
             }
         }
     }
 
     private static String togglePlayer(String currentPlayer) {
-        if (currentPlayer == "black") {
+        if (currentPlayer.equals("black")) {
             currentPlayer = "white";
         } else {
             currentPlayer = "black";
@@ -110,10 +112,11 @@ private static void printField(int size, int[] positionBlack, int[] positionWhit
     }
 
     public static boolean checkGameOver(int[] positionBlack, int[] positionWhite) {
-        for (int i = 0; i < positionBlack.length; i++) {
-            if (positionBlack == positionWhite) {
-                return true;
-            }
+        System.out.println(Arrays.toString(positionBlack));
+        System.out.println(Arrays.toString(positionWhite));
+        System.out.println();
+        if (positionBlack[0] == positionWhite[0] && positionBlack[1] == positionWhite[1]) {
+            return true;
         }
         return false;
     }

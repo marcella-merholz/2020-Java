@@ -1,4 +1,4 @@
-package People;
+package at.dcv.People;
 
 public class Main {
     public static void main(String[] args) {

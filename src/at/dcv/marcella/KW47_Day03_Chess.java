@@ -47,37 +47,37 @@ public class KW47_Day03_Chess {
         int[] originalPosition = {position[0], position[1]};
         boolean stepOK = false;
         while (!stepOK) {
-            int moveCase = random.nextInt(9);
+            int moveCase = random.nextInt(8);
             switch (moveCase) {
-                case 1 -> {
+                case 0 -> {
                     position[0] += 2;
                     position[1] += 1;
                 }
-                case 2 -> {
+                case 1 -> {
                     position[0] += 1;
                     position[1] += 2;
                 }
-                case 3 -> {
+                case 2 -> {
                     position[0] -= 2;
                     position[1] += 1;
                 }
-                case 4 -> {
+                case 3 -> {
                     position[0] -= 1;
                     position[1] += 2;
                 }
-                case 5 -> {
+                case 4 -> {
                     position[0] += 2;
                     position[1] -= 1;
                 }
-                case 6 -> {
+                case 5 -> {
                     position[0] += 1;
                     position[1] -= 2;
                 }
-                case 7 -> {
+                case 6 -> {
                     position[0] -= 2;
                     position[1] -= 1;
                 }
-                case 8 -> {
+                case 7 -> {
                     position[0] -= 1;
                     position[1] -= 2;
                 }
