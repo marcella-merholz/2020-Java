@@ -1,26 +1,32 @@
 package at.dcv.FotoApparat;
 
-import at.dcv.People.People;
-
 public class Main {
     public static void main(String[] args) {
+        FotoApparat nikon = new FotoApparat("Nikon D30", 19.3f, "Taiwan", "Alles in Einem");
+        FotoApparat sony = new FotoApparat("Sony Alpha A6500", 23.8f, "Japan", "Super Automatik");
 
-        FotoApparat f1 = new FotoApparat("Nikon", "Z 50", "11 / 2019", "949,00 Euro", 20.7, 445);
-        FotoApparat f2 = new FotoApparat("Canon", "EOS 850D", "04 / 2020", "899,00 Euro", 24, 515);
-        FotoApparat f3 = new FotoApparat("Canon", "PowerShot G7 X Mark III", "08 / 2019", "779,00 Euro", 20, 300);
+        Objektiv nikonStandard = new Objektiv(24, 80);
+        nikon.setCurrentObjektiv(nikonStandard);
 
-        System.out.println(f1);
-        System.out.println(f2);
-        System.out.println(f3);
+        System.out.println(nikon);
+        System.out.println(sony);
 
-        System.out.printf("%-15s %-25s %-20s %-15s %-15s %-15s %n", "Hersteller", "Modell", "Markteinführung", "Preis", "Megapixel", "Gewicht");
-        printData(f1);
-        printData(f2);
-        printData(f3);
+        Speicherkarte sonyMSeries = new Speicherkarte("sonyMSeries", 128);
+        Speicherkarte nikonQXD = new Speicherkarte("nikonQXD", 64);
+
+        sony.setCurrentSpeicherkarte(sonyMSeries);
+        sony.getFreePerCent();
+        sony.makeFoto();
+        sony.getFreePerCent();
+        sony.makeFoto();
+
+        sony.setCurrentSpeicherkarte(nikonQXD);
+        sony.getFreePerCent();
+        sony.makeFoto();
+        sony.makeFoto();
+        sony.makeFoto();
+        sony.getFreePerCent();
+        sony.makeFoto();
+
     }
-
-    public static void printData (FotoApparat f){
-        System.out.printf("%-15s %-25s %-20s %-15s %-15s %-15s %n", f.getName(), f.getModell(), f.getRelease(), f.getPrice(), f.getMegaPixel(), f.getWeight());
-    }
-
 }
