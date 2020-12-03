@@ -1,6 +1,6 @@
 package at.dcv.DigitalCampus;
 
-public class Trainer {
+public class Person {
 
     private String firstName;
     private String lastName;
@@ -10,7 +10,7 @@ public class Trainer {
     private String city;
     private String country;
 
-    public Trainer(String firstName, String lastName, String street, String streetNumber, int postalCode, String city, String country) {
+    public Person(String firstName, String lastName, String street, String streetNumber, int postalCode, String city, String country) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.street = street;
@@ -20,5 +20,8 @@ public class Trainer {
         this.country = country;
     }
 
+    public static void saveAddress(String filename) {
+        // in csv speichern
+    }
 
 }

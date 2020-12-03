@@ -1,6 +1,4 @@
-package People;
-
-import java.util.Objects;
+package at.dcv.People;
 
 //(Objekt-)Klasse
 public class People {

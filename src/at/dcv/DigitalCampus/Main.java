@@ -11,8 +11,8 @@ public class Main {
 
         Course CC_BB = new Course("CC Basics JAVA Feldkirch BB", "berufsbegleitend", 12);
 
-        Trainer Daniel = new Trainer("Daniel");
-        Trainer Gyula = new Trainer("Gyula");
+        Trainer Daniel = new Trainer("Daniel", "Grießer", "street", "streetNumber", 6800, "city", "country");
+        Trainer Gyula = new Trainer("Gyula", "Horvarth", "street2", "streetNumber2", 6800, "city2", "country2");
 
         Student Alex = new Student("Alex");
         Student Ali = new Student("Ali");
@@ -29,7 +29,7 @@ public class Main {
 
         CC_BB.setRoom(DC);
         CC_BB.setStudents(new Student[]{Alex, Ali, Bokhee, Dan, Erich, Irene, Klaus, Lukas, Marcella, Mihael, Sabrina, Samet});
-        CC_BB.setTrainer(Daniel);
+        CC_BB.setTrainers(new Trainer[]{Daniel, Gyula});
         CC_BB.printData();
     }
 
